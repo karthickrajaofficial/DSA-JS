@@ -15,3 +15,4 @@ const fib1 = n =>{
 }
 console.log(fib1(8))
 
+

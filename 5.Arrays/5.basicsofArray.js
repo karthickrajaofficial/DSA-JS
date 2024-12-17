@@ -135,3 +135,29 @@ console.log(newarr1); // [ 'bus', 'flight' ]
 const dummyarr = [5,8,9,89,65,7]
 dummyarr.fill(2,2)
 console.log(dummyarr) //Array(6) [ 5, 8, 2, 2, 2, 2 ]
+
+const findarr = [5,8,9,89,65,7]
+const index = findarr.findIndex((item)=>item ===5)
+console.log(index) //0
+
+//Flat 
+const flatarr =[1,[2,3],[4,5,6,[4,5,6],3],8,6]
+const flattenarr = flatarr.flat(2)
+console.log(flattenarr) //Array(12) [ 1, 2, 3, 4, 5, 6, 4, 5, 6, 3, 8, 6 ]
+
+//reverse
+const numsreverse = [5,8,9,89,65,7]
+numsreverse.reverse()
+console.log(numsreverse) //Array(6) [ 7, 65, 89, 9, 8, 5 ]
+
+const nums = [5, 8, 9, 89, 65, 7];
+
+// Create a copy of the array before sorting in ascending order
+const sortarrAssending = [...nums].sort((a, b) => a - b);
+
+// Create a copy of the array before sorting in descending order
+const sortarrDesending = [...nums].sort((a, b) => b - a);
+
+console.log(sortarrAssending);  // [5, 7, 8, 9, 65, 89]
+console.log(sortarrDesending);  // [89, 65, 9, 8, 7, 5]
+
