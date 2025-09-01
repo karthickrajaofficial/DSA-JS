@@ -35,6 +35,49 @@ let secondlargestno = arr =>{
      }
      return sec
 }
-let arr =[1,2,3,4,7,80,8,70]
+let arr =[1,2,3,4,7,8,70,80,8,70]
 
 console.log(secondlargestno(arr))
+
+// ===========================soln3=================
+
+const secondLarge = arr =>{
+  console.log("Original Array:", arr);
+//[ 'Original Array:', Array(10) [ 1, 2, 3, 4, 7, 8, 70, 80, 8, 70 ] ]
+  // Step 1: Remove duplicates
+  const uniquearr = Array.from(new Set(arr));
+  console.log("After Removing Duplicates:", uniquearr);
+
+  // [ 'After Removing Duplicates:', Array(8) [ 1, 2, 3, 4, 7, 80, 8, 70 ] ]
+
+  // Step 2: Sort in descending order
+  uniquearr.sort((a, b) => b - a);
+  console.log("After Sorting in Descending Order:", uniquearr);
+// [ 'After Sorting in Descending Order:', Array(8) [ 80, 70, 8, 7, 4, 3, 2, 1 ] ]
+
+  // Step 3: Find the second largest number
+  const secondLargest = uniquearr[1];
+  const firstLargest = uniquearr[0];
+  console.log("Second Largest Number:", secondLargest);
+  console.log("first Largest Number:", firstLargest);
+  // [ 'Second Largest Number:', 70 ]
+
+}
+secondLarge(arr);
+// =================soln 4====================
+const secondlargestOptimised = arr =>{
+  let largest = -Infinity
+  let secondLargest = -Infinity 
+  for(let i =0 ;i<arr.length;i++){
+    if(arr[i]>largest){
+      secondLargest = largest 
+      largest = arr[i]
+    } else if (arr[i] != largest && arr[i] > secondLargest ){
+      secondLargest = arr[i]
+    }
+  }  return secondLargest
+}
+console.log(secondlargestOptimised([5,8,7,15,89]))
+
+// time O(n)
+// space o(1)

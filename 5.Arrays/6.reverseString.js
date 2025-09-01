@@ -7,7 +7,11 @@ const reverseString = str => str.split('').reverse().join('')
 // console.log(reverseString("lia"))
 
 strs.forEach(str=>{
-    console.log(reverseString(str))
+    console.log(reverseString(str)) 
+    //'ail' 
+    // 'asil' 
+    // 'rac' 
+    // 'raw'
 })
 
 // without built-in 
@@ -18,7 +22,7 @@ const reversestr = arr =>{ //we can use fn method to instead of arrow fn too
     }
    return reversed
 }
-console.log(reversestr("lia"))
+console.log(reversestr("lia")) //'ail'
 
 let s = ["h","e","l","l","o"]
 //Two pointers approach
@@ -34,12 +38,21 @@ let reverseStrings = (s) => {
     }
 };
 reverseStrings(s)
-console.log(s)
+console.log(s) //[ 'o', 'l', 'l', 'e', 'h' ]
 
-let resversestr = function(s){
+let resversestr = (s)=>{
     for (let left =0 ,right =s.length-1;left<right;left++,right--){
         [s[left],s[right]] = [s[right],s[left]]
     }
 }
 reversestr(s)
-console.log(s)
+console.log(s) //[ 'o', 'l', 'l', 'e', 'h' ]
+
+// =======recursion
+let reverseStr = str =>{
+    if(str ===""){
+        return ""
+    }
+    return reverseStr(str.substr(1))+str.charAt(0)
+}
+console.log(reverseStr("karthick")) // o/p: 'kcihtrak'

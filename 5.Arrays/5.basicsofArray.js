@@ -16,6 +16,7 @@ const myNewArray = new MyArray();
 console.log(myNewArray.push('apple')); // Output: 1
 console.log(myNewArray); // To see the internal state of myNewArray
 
+//o/p : MyArray { length: 1, data: { 0: 'apple' } }
 
 
 //Array declaration 

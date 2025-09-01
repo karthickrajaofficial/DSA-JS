@@ -12,6 +12,7 @@ const fib1 = n =>{
     for(let i=2 ;i <=n;i++){
   arr.push(arr[i-1]+arr[i-2])
     }
+    
     return arr[n]
 }
 console.log(fib1(13))

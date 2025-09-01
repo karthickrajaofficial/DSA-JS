@@ -23,10 +23,36 @@ strs2.forEach(str => {
 
 let strsk = ["rUbaN karthick", "computer", "developer"];
 
-let Captialize1st = str => {
-  return str.split(" ").map(word => word.charAt(0).toUpperCase()
-  +word.slice(1).toLowerCase()).join(" ")
+const capitalizeWords = str => 
+    str.split(" ")
+       .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+       .join(" ");
+
+strsk.forEach(str => 
+    console.log(capitalizeWords(str))
+);
+
+
+
+const capitalizeWords1 = (str) => {
+    let result = "";
+    let capitalizeNext = true;
+
+    for (let char of str) {
+        if (char === " ") {
+            result += char;
+            capitalizeNext = true; // Next letter should be uppercase
+        } else if (capitalizeNext) {
+            result += char.toUpperCase(); // Convert first letter to uppercase
+            capitalizeNext = false;
+        } else {
+            result += char.toLowerCase(); // Convert other letters to lowercase
+        }
+    }
+
+    return result;
+};
+
+for (let str of strsk) {
+    console.log(capitalizeWords1(str));
 }
-strsk.forEach(str =>{
-    console.log(Captialize1st(str))
-})
